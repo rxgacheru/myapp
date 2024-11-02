@@ -1,0 +1,292 @@
+/* App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #141414;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Header styles */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #222222;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.header h1 {
+  color: #e50914;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* Form group styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: #b3b3b3;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.btn {
+  background-color: #e50914;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #f40612;
+}
+
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 2rem;
+}
+
+.card-grid > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.card-grid > *:hover {
+  transform: scale(1.05);
+}
+
+
+
+.card {
+  background-color: #222222;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  perspective: 1000px;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.back {
+  background-color: #141414;
+  color: #e50914;
+  transform: rotateY(180deg);
+}
+
+.flashcard-options {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.flashcard-option {
+  background-color: #333;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.flashcard-option:hover {
+  background-color: #e50914;
+  color: #ffffff;
+}
+
+
+
+.form-group label {
+  color: #b3b3b3;
+  font-size: 1rem;
+}
+
+#category, #amount {
+  background-color: #333;
+  color: #ffffff;
+  border: 1px solid #444;
+  padding: 0.5rem;
+  border-radius: 4px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+#category:hover, #amount:hover {
+  border-color: #e50914;
+}
+
+
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #141414;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .logo {
+  color: #e50914;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar .nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+  color: #e50914;
+}
+
+.navbar .profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.navbar .profile img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  transition: border-color 0.3s ease;
+}
+
+.navbar .profile img:hover {
+  border-color: #e50914;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+  
+  .navbar .nav-links {
+    gap: 1rem;
+  }
+
+  .navbar .logo {
+    font-size: 1.3rem;
+  }
+}
+
+
+
+/* About.css */
+
+.about-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  background-color: #222222;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+}
+
+.about-container h1,
+.about-container h2 {
+  color: #e50914;
+}
+
+.about-container p,
+.about-container ul {
+  line-height: 1.6;
+}
+
+.about-container ul {
+  margin-left: 1.5rem;
+}
+
+.contact-form {
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  color: #b3b3b3;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #333;
+  color: #ffffff;
+  border: 1px solid #444;
+  padding: 0.5rem;
+  border-radius: 4px;
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #e50914;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #f40612;
+}
