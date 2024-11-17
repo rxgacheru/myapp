@@ -11,6 +11,7 @@ function FlashcardQuiz({ isLoggedIn, username }) {
   const categoryEl = useRef();
   const amountEl = useRef();
 
+  
   useEffect(() => {
     axios.get('https://opentdb.com/api_category.php').then((res) => {
       setCategories(res.data.trivia_categories);
