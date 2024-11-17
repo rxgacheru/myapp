@@ -9,7 +9,7 @@ const NavBar = ({ isAuthenticated, handleLogout }) => {
         <Link to="/">Cardify</Link>
       </div>
       <div className="nav-links">
-        {isAuthenticated && <Link to="/flashcard-quiz">Categories</Link>}
+        {isAuthenticated && <Link to="/flashcard-quiz">Play</Link>}
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
       </div>
