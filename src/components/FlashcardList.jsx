@@ -1,7 +1,7 @@
 // FlashcardList.jsx
 import React from 'react';
 import Flashcard from './Flashcard';
-import "../app.css"; 
+import "../App.css"; 
 
 
 export default function FlashcardList({ flashcards }) {

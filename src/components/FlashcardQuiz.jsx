@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import FlashcardList from './FlashcardList';
 import axios from 'axios';
-import "../app.css"; 
+import "../App.css"; 
 
 function FlashcardQuiz({ isLoggedIn, username }) {
   const [flashcards, setFlashcards] = useState([]);
@@ -11,7 +11,7 @@ function FlashcardQuiz({ isLoggedIn, username }) {
   const categoryEl = useRef();
   const amountEl = useRef();
 
-  
+
   useEffect(() => {
     axios.get('https://opentdb.com/api_category.php').then((res) => {
       setCategories(res.data.trivia_categories);
