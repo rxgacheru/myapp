@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import "../app.css"; 
+
 
 export default function Flashcard({ flashcard }) {
   const [flip, setFlip] = useState(false);
@@ -8,16 +10,25 @@ export default function Flashcard({ flashcard }) {
   const backEl = useRef();
 
   function setMaxHeight() {
-    const frontHeight = frontEl.current.getBoundingClientRect().height;
-    const backHeight = backEl.current.getBoundingClientRect().height;
+    const frontHeight = frontEl.current?.getBoundingClientRect().height || 100;
+    const backHeight = backEl.current?.getBoundingClientRect().height || 100;
     setHeight(Math.max(frontHeight, backHeight, 100));
   }
 
-  useEffect(setMaxHeight, [flashcard.question, flashcard.answer, flashcard.options]);
+  useEffect(() => {
+    if (flashcard) {
+      setMaxHeight();
+    }
+  }, [flashcard?.question, flashcard?.answer, flashcard?.options]);
+
   useEffect(() => {
     window.addEventListener('resize', setMaxHeight);
     return () => window.removeEventListener('resize', setMaxHeight);
   }, []);
+
+  if (!flashcard) {
+    return null; // Optionally, return a placeholder or error message.
+  }
 
   return (
     <div
@@ -30,8 +41,8 @@ export default function Flashcard({ flashcard }) {
       <div className="front" ref={frontEl} aria-hidden={flip}>
         {flashcard.question}
         <div className="flashcard-options">
-          {flashcard.options.map(option => (
-            <div className="flashcard-option" key={option}>
+          {flashcard.options?.map((option, index) => (
+            <div className="flashcard-option" key={index}>
               {option}
             </div>
           ))}
